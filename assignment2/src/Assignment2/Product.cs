@@ -53,29 +53,24 @@ namespace Assignment
                  new Product(){ Name="Garlic", Price=30 ,Quantity=20,Type="Leafy green"},
                  new Product(){ Name="silverbeet", Price=10 ,Quantity=50,Type="Marrow"},
              };
-             Console.WriteLine("total number of Product in Product List: ",productList.Count);
-             foreach (Product item in productList)
-                 Console.WriteLine(item);
-
-          
-            Console.WriteLine("total number of Product List: ", newlist.Count);
+             Console.WriteLine("total number of Product in Product List: ",productList.Count());
             Console.WriteLine("After Adding Product");
             newlist.Add(new Product() { Name = "Potato", Price = 10, Quantity = 50, Type = "Root" } );
-            Console.WriteLine("total number of Product in Product List: ", newlist.Count);
+            Console.WriteLine("total number of Product in Product List: ", newlist.Count());
 
-            foreach (var item in newlist)
+            foreach (var item in productList)
                 Console.WriteLine(item);
-            foreach (var item in newlist)
+            foreach (var item in productList)
             {
                 if (item.Type.Equals("Leafy green"))
                     Console.WriteLine(item);
             }
 
-            var itemToRemove = newlist.Single(r => r.Name == "Garlic");
-            newlist.Remove(itemToRemove);
-            Console.WriteLine("total number of Product in Product List:-{0}", newlist.Count);
+            var itemToRemove = productList.Single(r => r.Name == "Garlic");
+            productList.Remove(itemToRemove);
+            Console.WriteLine("total number of Product in Product List: ", productList.Count());
 
-            foreach (var item in newlist)
+            foreach (var item in productList)
             {
                 if (item.Name.Equals("cabbage"))
                 {
@@ -85,7 +80,7 @@ namespace Assignment
                 }        
             }
             double total = 0;
-            foreach (var item in newlist)
+            foreach (var item in productList)
             {
                 if (item.Name.Equals("lettuce"))
                 {
